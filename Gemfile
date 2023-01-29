@@ -23,11 +23,19 @@ gem 'puma', '~> 3.0'
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors', '1.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '3.6.0'
+end
+
+group :test do
+  gem 'database_cleaner', '1.5.3'
+  gem 'shoulda-matchers', '3.1.1'
+  gem 'factory_girl_rails', '4.8.0'
+  gem 'faker', '1.7.3'
 end
 
 group :development do
@@ -35,7 +43,24 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec', '1.0.4'
+end
+
+group :production do
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise', '4.3.0'
+
+gem 'active_model_serializers', '0.10.6'
+
+gem 'ransack', '1.8.2'
+
+gem 'omniauth', '1.6.1'
+
+gem 'devise_token_auth', '0.1.42'
+
+gem 'rails-i18n', '5.0.4'
